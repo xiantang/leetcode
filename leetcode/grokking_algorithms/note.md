@@ -24,11 +24,6 @@ print(bina_search(my_list,7))
 * 疑问: 为什么判断错误之后 mid 要+1/-1呢?
 * 回答: 画了张图理解了一下 主要是把猜错的中点给排除掉
 
-###大O表示法
-结论:
-* 指明的是算法的增速
-* 指出的是算法的最糟运行时间
-* 不考虑`+*-/`
 
 ###选择排序
 
@@ -213,3 +208,61 @@ print(cut(a, 8))
 * 递归条件
     1. 猜的元素比中点大
     2. 猜的元素比中点小
+    
+    
+### qsort
+
+```python
+a = [1,2,6,3,8,5]
+
+def qsort(array):
+    if len(array) < 2:
+        return array
+    mid = array[0]
+    low = [array[i] for i in range(1,len(array)) if array[i] <= mid]
+    up = [array[i] for i in range(1,len(array)) if array[i] > mid]
+    return qsort(low)+[mid]+qsort(up)
+print(qsort(a))
+```
+1. 选择基准值
+2. 分别找出比基准大的值和比基准小的值
+3. 递归的对子数组进行排序
+
+##### 归纳证明
+1. 基线条件
+2. 归纳条件 证明排序len=1的数组有用 len=2 有用 len=3有用
+所以之后无需证明都有效 
+
+###大O表示法
+结论:
+* 指明的是算法的增速
+* 指出的是算法的最糟运行时间
+* 不考虑`+*-/`
+* 通常不考虑常量(快速查找常量比归并小)
+
+### qsort 时间复杂度
+* 最糟糕(头)
+    1. 以头为基准,需要涉及整个列表
+    2. 因为要遍历两边的数组,而且O(n)不受常量影响
+* 最优(中间)
+    1. 以中间为基准(类似二分log n)
+    2. 每层O(n)
+最佳的就是平均的情况 
+TODO: 随机的选择用作基准的元素
+
+```python
+array = [5,7,2,4,3,1,8,6]
+from random import randint
+def qsort(array):
+    if len(array)<=1:
+        return array
+    ran=randint(0,len(array)-1)
+
+    mid = array[ran]
+    array.pop(ran)
+    smaller = [ i for i in array   if i<=mid]
+    bigger = [i for i in array  if i>mid ]
+    return  qsort(smaller) + [mid] +qsort(bigger)
+
+print(qsort(array))
+```
