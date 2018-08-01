@@ -266,3 +266,81 @@ def qsort(array):
 
 print(qsort(array))
 ```
+
+### 散列表 
+
+DNS 解析
+域名->ip地址
+
+
+### 广度优先遍历
+
+```python
+from collections import deque
+
+graph = {}
+graph['you'] = ["alice","bob","claire"]
+graph['bob'] = ["anuj","peggy"]
+graph["alice"] = ["peggy"]
+graph["claire"] = ["thom","jooy"]
+graph["anuj"] = []
+graph["peggy"] = []
+graph["thom"] = []
+graph["jonny"] = []
+
+def person_is_seller(name):
+    return name[-1] == 'm'
+# deque
+
+def find():
+    search_queue = deque()
+    search_queue += graph["you"]
+    while search_queue:
+        person = search_queue.popleft()
+        if person_is_seller(person):
+            print(person +"is seller")
+            return True
+        else:
+            search_queue +=graph[person]
+    return False
+find()
+```
+使用一个队列 从右侧加入一个节点的所有的下个节点
+然后从左侧读取一个节点 往返直到队列为空 
+
+```python
+from collections import deque
+def person_is_seller(name):
+    return name[-1] == 'm'
+graph = {}
+graph['you'] = ["alice","bob","claire"]
+graph['bob'] = ["anuj","peggy"]
+graph["alice"] = ["peggy"]
+graph["claire"] = ["thom","jooy"]
+graph["anuj"] = []
+graph["peggy"] = []
+graph["thom"] = []
+graph["jonny"] = []
+search_queue = deque()
+
+def find2(search_queue):
+    if search_queue:
+        person = search_queue.popleft()
+        if person_is_seller(person):
+            print(person +"is seller")
+            return True
+        else:
+            search_queue +=graph[person]
+        return find2(search_queue)
+    else:
+        return None
+
+search_queue += graph["you"]
+print(find2(search_queue))
+```
+
+* 广度优先遍历是找到是否A-B的
+* 有就可以找到最短路径
+* 有向图可以指定方向
+* 无向图关系双向
+* 按照顺序放入队列就可以找到最短路径,检查过的人需要放入去重列表
