@@ -344,3 +344,189 @@ print(find2(search_queue))
 * 有向图可以指定方向
 * 无向图关系双向
 * 按照顺序放入队列就可以找到最短路径,检查过的人需要放入去重列表
+
+### 迪杰斯特拉算法
+
+```python
+graph = {}
+graph['start'] = {}
+graph['start']['a'] = 5
+graph['start']['b'] = 0
+graph['a'] = {}
+graph['a']['c'] = 15
+graph['a']['d'] = 20
+graph['b'] = {}
+graph['b']['c'] = 30
+graph['b']['d'] = 25
+graph['c'] = {}
+graph['c']['fin'] = 20
+graph['d'] = {}
+graph['d']['fin'] = 10
+graph['fin'] = {}
+costs = {}
+
+
+
+costs['a'] = 5
+costs['b'] = 0
+costs['c'] = float("inf")
+costs['d'] = float("inf")
+costs['fin'] = float("inf")
+parents = {}
+parents['a'] = 'start'
+parents['b'] = 'start'
+parents['c'] = 'start'
+parents['d'] = 'start'
+parents['fin'] = None
+processed = []
+def find_lowst(costs):
+    low_cost = float("inf")
+    low_cost_node = None
+    for node in costs:
+        cost = costs[node]
+        if cost < low_cost and node not in processed:
+            low_cost = cost
+            low_cost_node = node
+    return low_cost_node
+
+node = find_lowst(costs)
+while node is not  None:
+    cost = costs[node]
+    friends = graph[node]
+    for friend in friends.keys():
+        new_cost = friends[friend]+cost
+        # if new_cost <
+        if new_cost < costs[friend]:
+            costs[friend] = new_cost
+            parents[friend] = node
+    processed.append(node)
+    node = find_lowst(costs)
+print(costs)
+```
+
+简洁版本
+
+```python
+graph = {}
+graph['start'] = {}
+graph['start']['a'] = 5
+graph['start']['b'] = 0
+graph['a'] = {}
+graph['a']['c'] = 15
+graph['a']['d'] = 20
+graph['b'] = {}
+graph['b']['c'] = 30
+graph['b']['d'] = 25
+graph['c'] = {}
+graph['c']['fin'] = 20
+graph['d'] = {}
+graph['d']['fin'] = 10
+graph['fin'] = {}
+def get_costs_parent(graph):
+    costs = {}
+    parents = {}
+    for node in graph.keys():
+        if node in graph['start'].keys():
+            costs[node] = graph['start'][node]
+            parents[node] = 'start'
+        else:
+            costs[node] = float('inf')
+            parents[node] = None
+    return costs,parents
+costs ,parents= get_costs_parent(graph)
+
+processed = []
+def find_lowst(costs):
+    low_cost = float("inf")
+    low_cost_node = None
+    for node in costs:
+        cost = costs[node]
+        if cost < low_cost and node not in processed:
+            low_cost = cost
+            low_cost_node = node
+    return low_cost_node
+node = find_lowst(costs)
+while node is not  None:
+    cost = costs[node]
+    friends = graph[node]
+    for friend in friends.keys():
+        new_cost = friends[friend]+cost
+        # if new_cost <
+        if new_cost < costs[friend]:
+            costs[friend] = new_cost
+            parents[friend] = node
+    processed.append(node)
+    node = find_lowst(costs)
+print(costs['fin'])
+```
+
+```python
+graph = {}
+graph['start'] = {}
+graph['start']['a'] = 5
+graph['start']['b'] = 0
+graph['a'] = {}
+graph['a']['c'] = 15
+graph['a']['d'] = 20
+graph['b'] = {}
+graph['b']['c'] = 30
+graph['b']['d'] = 25
+graph['c'] = {}
+graph['c']['fin'] = 20
+graph['d'] = {}
+graph['d']['fin'] = 10
+graph['fin'] = {}
+def get_costs_parent(graph):
+    costs = {}
+    parents = {}
+    for node in graph.keys():
+        if node in graph['start'].keys():
+            costs[node] = graph['start'][node]
+            parents[node] = 'start'
+        else:
+            costs[node] = float('inf')
+            parents[node] = None
+    return costs,parents
+costs ,parents= get_costs_parent(graph)
+
+def find_lowst(costs):
+    low_cost = float("inf")
+    low_cost_node = None
+    for node in costs:
+        cost = costs[node]
+        if cost < low_cost and node not in processed:
+            low_cost = cost
+            low_cost_node = node
+    return low_cost_node
+def find_short_path(costs,processed,parents):
+    node = find_lowst(costs)
+    if node is not None:
+        cost = costs[node]
+        neighbors = graph[node]
+        for n in neighbors.keys():
+            new_cost = neighbors[n] + cost
+            if new_cost < costs[n]:
+                costs[n] = new_cost
+                parents[n] = node
+        processed.append(node)
+        return find_short_path(costs,processed,parents)
+
+    else:
+        return costs['fin']
+processed = []
+
+fastst = find_short_path(costs,processed,parents)
+```
+
+递归实现:
+* 基准条件:找到的最小节点为空
+* 递归条件:还有节点没有处理
+
+####主要思路:
+1. 找到一个节点然后取找他的所有相邻节点
+2. 将相邻节点到本节点的距离与本节点到起点的距离相加
+3. 判断是否比相邻结点原来的距离短
+4. 如果更短直接更新,并且加入去重列表
+5. 如何取找一个节点:我们选取的是最小的节点,如果这个节点不在去重队列
+并且是最小的,就以他为节点更新他的相邻节点,至于我们要选择最小的,是因为
+要是选择最大的化会遇到无限大的情况(没有找到到达线路)
