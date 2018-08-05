@@ -15,4 +15,5 @@ def bina_search(list,item):
     return None
 
 my_list = [1,3,5,7,8]
+
 print(bina_search(my_list,7))

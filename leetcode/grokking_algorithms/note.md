@@ -534,3 +534,65 @@ fastst = find_short_path(costs,processed,parents)
 * 广度优先搜索可用来在非加权图中查找最短路径
 * Dijkstra适合在加权图中查找最短路径
 * 加权图为正:Dijkstra/加权图为负:贝尔曼-福德
+
+### 贪心算法
+
+```python
+array = ['mt','wa','or','id','nv','ut','ca','az']
+states_needed = set(array)
+# 转换为集合
+stations = {}
+stations['kone'] = set(['id','nv','ut'])
+stations['ktwo'] = set(['wa','id','mt'])
+stations['kthree'] = set(['or','nv','ca'])
+stations['kfour'] = set(['nv','ut'])
+stations['kfive'] = set(['ca','az'])
+stations_array = []
+while states_needed:
+    bast_station = None
+    states_covered = set()
+    for station,state_for_station in stations.items():
+        # print(station,state_for_station)
+        covered  = state_for_station & states_needed
+
+        if len(covered) > len(states_covered):
+            bast_station = station
+            states_covered = covered
+    states_needed = states_needed - states_covered
+    # print(states_needed)
+
+    stations_array.append(bast_station) #最好的station
+
+print(stations_array)
+```
+
+* 贪心算法思路:每步都选择最有解,从而达到整体最优解
+* 不适用场景:背包问题/只能找到非常接近最优解的解法
+
+```python
+
+#递归实现
+def find_station(states_needed):
+    if states_needed:
+        bast_station = None
+        states_covered = set()
+        for station,state_for_station in stations.items():
+            # print(station,state_for_station)
+            covered  = state_for_station & states_needed
+
+            if len(covered) > len(states_covered):
+                bast_station = station
+                states_covered = covered
+        states_needed = states_needed - states_covered
+
+        return  [bast_station] +find_station(states_needed)
+    else:
+        return []
+print(find_station(states_needed))
+
+```
+实现思路:
+1.寻找覆盖未被覆盖区域最多的电台  
+2.将这个加入队列
+3.更新未被覆盖区域
+4.重复1-3
