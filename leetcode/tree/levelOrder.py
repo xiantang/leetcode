@@ -1,3 +1,4 @@
+from queue import Queue
 class TreeNode(object):
     def __init__(self, x):
         self.val = x
@@ -10,30 +11,38 @@ class Solution(object):
         :rtype: List[List[int]]
 
         """
+        res = []
         if root == None:
-            return []
-        else:
-            result = []
+            return res
+        res.append([root.val])
+        queue = Queue()
+        father_node = []
+        queue.put(root)
 
-            father_node = [root]
-            father_val = [root.val]
+        father_node.append(root)
+        while len(father_node)!=0:
+            child_node = []
+            child_val = []
 
-            result.append(father_val)
+            for node in father_node:
+                if node.left is not None:
+                    child_node.append(node.left)
+                    child_val.append(node.left.val)
+                    queue.put(node.left)
+                if node.right is not None:
+                    child_node.append(node.right)
+                    child_val.append(node.right.val)
+                    queue.put(node.right)
+            if child_node == []:
+                pass
+            else:
+                res.append(child_val)
+            father_node = child_node
+        return res
 
-            while len(father_node) > 0:
-                child_node=[]
-                child_val=[]
-                for x in father_node:
-                    if x.left!=None:
-                        child_node.append(x.left)
-                        child_val.append(x.left.val)
-                    if x.right!=None:
-                        child_node.append(x.right)
-                        child_val.append(x.right.val)
-                father_node=child_node
-                if len(child_node)!=0:
-                    result.append(child_val)
-            return  result
+
+
+
 
 
 
