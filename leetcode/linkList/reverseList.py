@@ -8,22 +8,18 @@ class Solution(object):
         """
         :type head: ListNode
         :rtype: ListNode
+        递归做法
+        从头开始遍历 存储当前节点的下一个节点 将当前节点指向之前的一个节点 不断向前递归
         """
-        if head==None or head.next==None:
-            return head
-        p=head
-        new_H=None
-        while p!=None:
-            temp=p.next #暂存
-            p.next=new_H
-            new_H=p
-            p=temp
-        return new_H
 
-    def for__(self,head):
-        while head:
-            print(head.val)
-            head=head.next
+        def _reverseList(head, prv=None):
+            if head == None:
+                return prv
+            n = head.next
+            head.next = prv
+            return _reverseList(n, head)
+
+        return _reverseList(head)
 
 
 if __name__ == '__main__':
@@ -37,4 +33,4 @@ if __name__ == '__main__':
     c.next=d
     d.next=e
     heda=Solution().reverseList(a)
-    Solution().for__(heda)
+    print(1)
