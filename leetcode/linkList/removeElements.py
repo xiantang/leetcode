@@ -26,7 +26,7 @@ class Solution:
                 head.next=head.next.next
             else:
                  head=head.next
-        self.for__(start)
+        return start
 
     def for__(self, head):
             while head:
@@ -34,7 +34,7 @@ class Solution:
                 head = head.next
 a=ListNode(1)
 
-b=ListNode(2)
+b=ListNode(1)
 a.next=b
 
 
