@@ -14,18 +14,21 @@ class Solution:
         fast = head
         slow = head
         pre = None
+        #首先使用快慢指针法，使用慢指针将前面半条节点逆置
         while fast and fast.next:
             fast = fast.next.next
             temp = slow.next
             slow.next = pre
             pre = slow
             slow = temp
+        #整理边界条件
         if fast:
             point1 = pre
             point2 = slow.next
         else:
             point1 =pre
             point2 = slow
+        #遍历两条链表判断是否相同
         while point1 and point2:
             if point1.val != point2.val:
                 return False
