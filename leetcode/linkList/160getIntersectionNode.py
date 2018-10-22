@@ -27,41 +27,26 @@ class Solution(object):
         """
         :type head1, head1: ListNode
         :rtype: ListNode
-        超出时间限制
         """
-        s1 = 0
-        s2 = 0
-        h1 = headA
-        h2 = headB
-        while h1 is not None:
-            s1 += 1
-            h1 = h1.next
-        while h2 is not None:
-            s2 += 1
-            h2 = h2.next
-        if s2 > s1:
-            h2 = headB
-            while s2 - s1 > 0:
-                h2 = h2.next
-                s2 -= 1
-            h1 = headA
-        elif s2 < s1:
-            h1 = headA
-            while s1 - s2 > 0:
-                h1 = h1.next
-                s1 -= 1
-            h2 = headB
-        else:
-            h1 = headA
-            h2 = headB
-        res = None
-        while h1 is not None and h2 is not None:
-            if h1 == h2:
-                res = h1
-                return h1
-            h1 = h1.next
-            h2 = h2.next
-        return res
+        curA = headA
+        curB = headB
+
+        if not headA or not headB:
+            return None
+        #同时遍历两个链表  循环条件是 是否相同
+        while curA or curB:
+            if not curA:
+                curA = headB
+            #如果一个链表到尾节点的 就从指向另外一个链表 这样只要遍历len(A)+len(B)长度就能够得出了
+            if not curB:
+                curB = headA
+
+            if curA == curB:
+                return curA
+            curA = curA.next
+            curB = curB.next
+
+        return None
 a=ListNode(1)
 b=ListNode(2)
 c=ListNode(2)
