@@ -42,4 +42,4 @@ if __name__ == '__main__':
     c.next=d
     d.next=e
     heda=Solution().reverseListForLoop(a)
-    print(1)
+
