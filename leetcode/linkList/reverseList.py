@@ -4,7 +4,7 @@ class ListNode(object):
         self.next = None
 
 class Solution(object):
-    def reverseList(self, head):
+    def reverseListRecursion(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
@@ -20,7 +20,16 @@ class Solution(object):
             return _reverseList(n, head)
 
         return _reverseList(head)
-
+    def reverseListForLoop(self,head):
+        def reverse(head):
+            prv = None
+            while head:
+                n = head.next
+                head.next = prv
+                prv = head
+                head = n
+            return prv
+        return reverse(head)
 
 if __name__ == '__main__':
     a=ListNode(1)
@@ -32,5 +41,5 @@ if __name__ == '__main__':
     b.next=c
     c.next=d
     d.next=e
-    heda=Solution().reverseList(a)
+    heda=Solution().reverseListForLoop(a)
     print(1)
