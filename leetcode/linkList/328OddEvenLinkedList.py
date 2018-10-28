@@ -10,26 +10,28 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
+        ### 时间复杂度 O(1)
 
-        odd_list = ListNode(None)
-        first = odd_list
-
-        even_list = ListNode(None)
-        second = even_list
-        while head:
-            temp = head.next
-            head.next = None
-            if head.val % 2 == 1:
-
-                odd_list.next = head
-                odd_list = odd_list.next
-            else:
-
-                even_list.next = head
-                even_list = even_list.next
-            head = temp
-        odd_list.next = second.next
-        first = first.next
+        if not head or not head.next:
+            return head
+            # 记录头节点
+        first = head
+        # 定义奇偶链表
+        odd = head
+        even = head.next
+        # 记录偶链表的头部
+        even_head = head.next
+        while even and even.next:
+            # 未处理的奇数节点永远在偶数节点之后 反之同样
+            # 将其链接
+            odd.next = even.next
+            temp = even.next  # 记录奇数链表的尾部
+            even.next = odd.next.next
+            # 将奇数链表的尾部和偶数链表的头部链接
+            temp.next = even_head
+            # 奇偶链表各走一步
+            even = even.next
+            odd = odd.next
         return first
 if __name__ == '__main__':
     a = ListNode(1)
