@@ -25,7 +25,11 @@ class Solution(object):
         l1.next = h2.next
         return h1.next
 
+
+
+
 if __name__ == '__main__':
+
     a = ListNode(1)
     b = ListNode(2)
     c = ListNode(5)
@@ -39,4 +43,5 @@ if __name__ == '__main__':
     d.next = e
     e.next = f
     f.next = g
+    Q=reverse(a)
     Solution().partition(a,3)
