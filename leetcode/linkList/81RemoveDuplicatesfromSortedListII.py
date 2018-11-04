@@ -12,7 +12,6 @@ class Solution(object):
         """
         null_head = ListNode(None)
         null_head.next = head
-        low = head
         fast = head
         pre = null_head
         if not fast or not fast.next:
