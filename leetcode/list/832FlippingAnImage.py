@@ -1,8 +1,8 @@
 class Solution(object):
     def flipAndInvertImage(self, A):
         """
-        :type A: List[List[int]]
-        :rtype: List[List[int]]
+        :type A: list[list[int]]
+        :rtype: list[list[int]]
         """
         for row in A:
             row.reverse()

@@ -1,7 +1,7 @@
 class Solution:
     def longestCommonPrefix(self, strs):
         """
-        :type strs: List[str]
+        :type strs: list[str]
         :rtype: str
         """
         min=''

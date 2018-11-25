@@ -9,7 +9,7 @@ class Solution(object):
     def averageOfLevels(self, root):
         """
         :type root: TreeNode
-        :rtype: List[float]
+        :rtype: list[float]
         """
         if root==None:
             return  []

@@ -1,7 +1,7 @@
 class Solution:
     def findMin(self, nums):
         """
-        :type nums: List[int]
+        :type nums: list[int]
         :rtype: int
         """
         if len(nums)<5:return min(nums)

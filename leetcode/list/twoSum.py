@@ -1,9 +1,9 @@
 class Solution:
     def twoSum(self, nums, target):
         """
-        :type nums: List[int]
+        :type nums: list[int]
         :type target: int
-        :rtype: List[int]
+        :rtype: list[int]
         """
         for  i in range(len(nums)-1):
             for j in range(i+1,len(nums)):#最后是关掉的

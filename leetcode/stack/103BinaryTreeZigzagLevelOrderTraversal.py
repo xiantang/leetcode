@@ -4,7 +4,7 @@ class Solution(object):
         """
         :type root: T
         reeNode
-        :rtype: List[List[int]]
+        :rtype: list[list[int]]
         """
         stack = []
 

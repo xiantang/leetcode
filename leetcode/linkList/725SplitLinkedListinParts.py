@@ -9,7 +9,7 @@ class Solution(object):
         """
         :type root: ListNode
         :type k: int
-        :rtype: List[ListNode]
+        :rtype: list[ListNode]
         """
         if not root:
             return [None] * k

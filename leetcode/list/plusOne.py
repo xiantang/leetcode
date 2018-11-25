@@ -1,8 +1,8 @@
 class Solution:
     def plusOne(self, digits):
         """
-        :type digits: list[int]
-        :rtype: list[int]
+        :type digits: List[int]
+        :rtype: List[int]
         """
         x=''
         # x=int(''.join(digits))

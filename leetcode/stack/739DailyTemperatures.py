@@ -1,8 +1,8 @@
 class Solution(object):
     def dailyTemperatures(self, T):
         """
-        :type T: List[int]
-        :rtype: List[int]
+        :type T: list[int]
+        :rtype: list[int]
         """
         stack = []
         ans = [0] * len(T)
