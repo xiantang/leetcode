@@ -1,7 +1,7 @@
 class Solution:
     def isValidSudoku(self, board):
         """
-        :type board: List[List[str]]
+        :type board: list[list[str]]
         :rtype: bool
         """
         if self.checkFirst(board) and self.checkSecond(board) and self.checkThird(board):

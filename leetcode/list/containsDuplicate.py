@@ -1,7 +1,7 @@
 class Solution:
     def containsDuplicate(self, nums):
         """
-        :type nums: List[int]
+        :type nums: list[int]
         :rtype: bool
         """
         len1=len(set(nums))
