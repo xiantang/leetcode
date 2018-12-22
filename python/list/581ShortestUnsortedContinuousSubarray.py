@@ -1,9 +1,10 @@
 class Solution(object):
-    def findUnsortedSubarray(self, nums):
+    def findUnsortedSubarray(self, nums:list):
         """
         :type nums: List[int]
         :rtype: int
         """
+        
         m = nums[0]
         end = 0
         for i in range(1, len(nums)):
