@@ -2,7 +2,7 @@ package ArrayList;
 
 public class MaxAreOfIsland {
     int [][] grid;
-    boolean[][] seen;
+        boolean[][] seen;
     //  查看当前点附近的所有点
     public int area(int r,int c){
         if(r<0||r>=grid.length||c<0||c>=grid[0].length
