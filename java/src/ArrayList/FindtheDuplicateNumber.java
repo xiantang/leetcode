@@ -1,6 +1,7 @@
 package ArrayList;
 
 public class FindtheDuplicateNumber {
+
     public int findDuplicate(int[] nums) {
         // 定义快慢指针
         int fast = nums[0];
