@@ -14,6 +14,7 @@ public class CombinationSum {
     }
 
     public void getResult(List<List<Integer>> res, List<Integer> list, int[] num, int target, int start) {
+        
         if (target > 0) {
             for (int i = start; i < num.length; i++) {
                 if (target < num[i]) {
