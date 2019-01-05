@@ -1,5 +1,6 @@
 package Tree;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class NaryTreePostorderTraversal {
 
     public List<Integer> postorder(Node root) {
         res = new ArrayList<>();
+
         postorde(root);
         return res;
     }
