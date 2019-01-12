@@ -1,9 +1,12 @@
 package ArrayList;
 
+import java.lang.reflect.Array;
+
 public class FindtheDuplicateNumber {
 
     public int findDuplicate(int[] nums) {
         // 定义快慢指针
+
         int fast = nums[0];
         int slow = nums[0];
         do{
