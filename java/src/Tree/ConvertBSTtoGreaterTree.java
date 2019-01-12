@@ -4,10 +4,10 @@ public class ConvertBSTtoGreaterTree {
     private int sum = 0;
     public TreeNode convertBST(TreeNode root) {
         if(root!=null){
-            convertBST(root.right);
+            root.right = convertBST(root.right);
             sum += root.val;
             root.val = sum;
-            convertBST(root.left);
+            root.left = convertBST(root.left);
         }
         return root;
     }
