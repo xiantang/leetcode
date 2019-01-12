@@ -18,6 +18,6 @@ public class RLEIterator {
         RLEIterator rleIterator = new RLEIterator(A);
         System.out.println(rleIterator.next(2));
         System.out.println(rleIterator.next(1));
-        
+
     }
 }
