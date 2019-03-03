@@ -15,3 +15,14 @@
 |958|[check-completeness-of-a-binary-tree](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/958.check-completeness-of-a-binary-tree.java) | [Java] | Medium |
 |96|[check-completeness-of-a-binary-tree](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/958.check-completeness-of-a-binary-tree.java) | [Java] | Medium |
 |894|[All Possible Full Binary Trees](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/AllPossibleFullBinaryTrees.java) | [Java] | Medium |
+
+| binarySearch | Title | Solution | Difficulty |
+|154|[FindMinimuminRotatedSortedArrayII](https://github.com/xiantang/leetcode/blob/master/python/binarySearch/154FindMinimuminRotatedSortedArrayII.py) | [Python] | Hard |
+
+| LinkList | Title | Solution | Difficulty |
+|109|[ConvertSortedListtoBinarySearchTree](https://github.com/xiantang/leetcode/blob/master/python/linkList/109ConvertSortedListtoBinarySearchTree.py) | [Python] | Hard |
+|141|[LinkedListCycle](https://github.com/xiantang/leetcode/blob/master/python/linkList/141LinkedListCycle.py) | [Python] | Easy |
+|143|[ReorderList](https://github.com/xiantang/leetcode/blob/master/python/linkList/143ReorderList.py) | [Python] | 	Medium |
+|160|[getIntersectionNode](https://github.com/xiantang/leetcode/blob/master/python/linkList/160getIntersectionNode.py) | [Python] | Easy |
+
+
