@@ -13,3 +13,5 @@
 |662|[maximum-width-of-binary-tree](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/662.maximum-width-of-binary-tree.java) | [Java] | Medium |
 |684|[redundant-connection](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/684.redundant-connection.java) | [Java] | Medium |
 |958|[check-completeness-of-a-binary-tree](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/958.check-completeness-of-a-binary-tree.java) | [Java] | Medium |
+|96|[check-completeness-of-a-binary-tree](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/958.check-completeness-of-a-binary-tree.java) | [Java] | Medium |
+|894|[All Possible Full Binary Trees](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/AllPossibleFullBinaryTrees.java) | [Java] | Medium |
