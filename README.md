@@ -1,4 +1,4 @@
-# leetcode 300
+# LeetCode 300
 
 ## Tree 
 | Tree | Title | Solution | Difficulty |
