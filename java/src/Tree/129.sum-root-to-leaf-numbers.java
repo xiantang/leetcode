@@ -62,7 +62,37 @@
  */
 class Solution {
     public int sumNumbers(TreeNode root) {
+        public int sumNumbers(TreeNode root) {
+        List<String> values = new LinkedList<>();
+        values = find(root,values,"");
+        int count = 0;
+        for(String value:values){
+            count += Integer.parseInt(value);
+            // count += value;
+        }
+        return count;
         
+    }
+    
+    public List<String>  find(TreeNode root,List<String> values, String sum){
+        if(root == null){
+            return values;
+        }
+        sum += ""+root.val;
+        
+        if(root.left== null && root.right == null){
+            values.add(sum);
+            return values;
+        }
+        if(root.left!=null)
+            values = find(root.left,values,sum);
+        
+        if(root.right!=null)
+            values = find(root.right,values,sum);
+        
+        return values;
+        
+    }
     }
 }
 
