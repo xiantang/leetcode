@@ -20,7 +20,7 @@
 
 ## BinarySearch
 
-| binarySearch | Title | Solution | Difficulty |  
+| BinarySearch | Title | Solution | Difficulty |  
 |---| ----- | -------- | ---------- | 
 |154|[FindMinimuminRotatedSortedArrayII](https://github.com/xiantang/leetcode/blob/master/python/binarySearch/154FindMinimuminRotatedSortedArrayII.py) | [Python] | Hard |
 
