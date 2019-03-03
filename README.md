@@ -1,4 +1,6 @@
 # leetcode 300
+
+## Tree 
 | Tree | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
 |988|[Path Sum II](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/113.path-sum-ii.java) | [Java] | Medium |
@@ -16,14 +18,17 @@
 |96|[check-completeness-of-a-binary-tree](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/958.check-completeness-of-a-binary-tree.java) | [Java] | Medium |
 |894|[All Possible Full Binary Trees](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/AllPossibleFullBinaryTrees.java) | [Java] | Medium |
 
+## BinarySearch
 
-
-| binarySearch | Title | Solution | Difficulty |
+| binarySearch | Title | Solution | Difficulty |  
+|---| ----- | -------- | ---------- | 
 |154|[FindMinimuminRotatedSortedArrayII](https://github.com/xiantang/leetcode/blob/master/python/binarySearch/154FindMinimuminRotatedSortedArrayII.py) | [Python] | Hard |
 
 
+## LinkList
 
 | LinkList | Title | Solution | Difficulty |
+|---| ----- | -------- | ---------- |
 |109|[ConvertSortedListtoBinarySearchTree](https://github.com/xiantang/leetcode/blob/master/python/linkList/109ConvertSortedListtoBinarySearchTree.py) | [Python] | Hard |
 |141|[LinkedListCycle](https://github.com/xiantang/leetcode/blob/master/python/linkList/141LinkedListCycle.py) | [Python] | Easy |
 |143|[ReorderList](https://github.com/xiantang/leetcode/blob/master/python/linkList/143ReorderList.py) | [Python] | 	Medium |
