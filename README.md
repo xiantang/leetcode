@@ -17,6 +17,8 @@
 |958|[check-completeness-of-a-binary-tree](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/958.check-completeness-of-a-binary-tree.java) | [Java] | Medium |
 |96|[check-completeness-of-a-binary-tree](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/958.check-completeness-of-a-binary-tree.java) | [Java] | Medium |
 |894|[All Possible Full Binary Trees](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/AllPossibleFullBinaryTrees.java) | [Java] | Medium |
+|450|[delete-node-in-a-bst](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/450.delete-node-in-a-bst.java) | [Java] | Medium |
+
 
 ## BinarySearch
 
