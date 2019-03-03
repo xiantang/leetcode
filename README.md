@@ -16,8 +16,12 @@
 |96|[check-completeness-of-a-binary-tree](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/958.check-completeness-of-a-binary-tree.java) | [Java] | Medium |
 |894|[All Possible Full Binary Trees](https://github.com/xiantang/leetcode/blob/master/java/src/Tree/AllPossibleFullBinaryTrees.java) | [Java] | Medium |
 
+
+
 | binarySearch | Title | Solution | Difficulty |
 |154|[FindMinimuminRotatedSortedArrayII](https://github.com/xiantang/leetcode/blob/master/python/binarySearch/154FindMinimuminRotatedSortedArrayII.py) | [Python] | Hard |
+
+
 
 | LinkList | Title | Solution | Difficulty |
 |109|[ConvertSortedListtoBinarySearchTree](https://github.com/xiantang/leetcode/blob/master/python/linkList/109ConvertSortedListtoBinarySearchTree.py) | [Python] | Hard |
