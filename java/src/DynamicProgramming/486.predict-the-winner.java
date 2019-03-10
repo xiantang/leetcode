@@ -54,6 +54,7 @@
  */
 class Solution {
     public boolean PredictTheWinner(int[] nums) {
+        // 区间dp问题
         int[][] dp = new int[nums.length][nums.length];
         // 记住 dp[i][j] 指的是玩家a i->j 能够得到的分数
         // 长度为1 的初始值 就是i=i 只有1个元素
