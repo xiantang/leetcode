@@ -37,12 +37,31 @@
  * 
  */
 class Solution {
+    // public int maxArea(int[] height) {
+    //     int maxarea = 0;
+    //     for(int i = 0;i<height.length;i++){
+    //         for(int j = i+1;j<height.length;j++){
+    //             maxarea = Math.max(maxarea,(j-i)*Math.min(height[i],height[j]));
+    //         }
+    //     }
+    //     return maxarea;
+    // }
     public int maxArea(int[] height) {
         int maxarea = 0;
-        for(int i = 0;i<height.length;i++){
-            for(int j = i+1;j<height.length;j++){
-                maxarea = Math.max(maxarea,(j-i)*Math.min(height[i],height[j]));
+        int l = 0;
+        int r = height.length-1;
+        while(l<r){
+            int m = r-l;
+            int lv = height[l];
+            int rv = height[r];
+            maxarea = Math.max(maxarea,Math.min(lv,rv)*m);
+            if(lv<rv){
+                l++;
+            }else{
+                r--;
             }
+            
+        
         }
         return maxarea;
     }
