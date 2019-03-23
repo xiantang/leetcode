@@ -56,8 +56,6 @@ class Solution {
             target--;
             sub= sub.next;
         }
-        sub.next = sub.next.next;
-            
         return dummy.next;
     }
 }
