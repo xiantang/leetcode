@@ -40,6 +40,8 @@
  * 
  */
 class Solution {
+    // f[i] = f[i / 2] + i % 2.
+    
     public int[] countBits(int num) {
         public int[] countBits(int num) {
             int[] res = new int[num+1];
