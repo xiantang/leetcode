@@ -37,11 +37,12 @@ class Solution {
         int left = 0;
         int right = nums.length-1;
         while(true){
+            // 返回位置
             int pos = partition(nums,left,right);
-            if(pos+1 == k){
+            if(pos + 1 == k){
                 return nums[pos];
             }
-            else if(pos +1>k){
+            else if(pos + 1 > k){
                 right = pos-1;
             }else
                 left = pos+1;
