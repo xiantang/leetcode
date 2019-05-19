@@ -1,5 +1,58 @@
-# LeetCode 300
 
+
+# JAVA刷题常用API
+
+## java.lang.String
+
+| 方法 | 描述 | 
+|---| ----- |
+| char charAt(int index) | 返回给定位置的代码单元 | 
+| boolean equals(Object other) boolean equalsIngoreCase(String other) |	如果字符串与other相等，返回true 忽略大小写 | 
+| int length() |	返回字符串的长度 |
+| String substring(int beginIndex) String substring(int beginIndex, int endIndex) |	返回一个新字符串，包含原始字符串从beginIndex到串尾或到endIndex-1的所有代码单元 | 
+| String toLowerCase() String toUpperCase() |返回小写字符串返回大写字符串|
+| int indexOf(String str[, int fromIndex])
+int lastIndexOF(String str[, int fromIndex]) | 	返回第一个/最后一个子串的位置,从起始位置或者fromIndex开始 |  
+
+
+## java.util.Scanner
+
+| 方法 | 描述 | 
+|---| ----- |
+| Scanner(InputStream in) Scanner(File f) Scanner(String data) | 	用给定的输入流创建一个Scanner对象    例子：Scanner in = new Scanner(System.in)| 
+|String nextLine() |	读取输入的下一行内容 |
+|String next()	|读取输入的下一个单词（以空格作为间隔） |
+|int nextInt()   double nextDouble()	|读取并转换下一个表示整数或浮点数的字符序列|
+
+
+
+## java.util.Arrays
+
+| 方法 | 描述 | 
+|---| ----- |
+| static String toString(type[] a) |	返回包含a中数据元素的字符串 |
+| static void sort(type[] a) |	采用优化的快速排序算法对数组进行排序 |
+| static void binarySearch(type[] a, type v)   |	使用二分搜索算法查找值v | 
+| static Boolean equals(type[] a, type[] b)	|如果两个数字相同，返回true |
+
+
+## java.util.List<E>
+
+| 方法 | 描述 | 
+|---| ----- |
+| `ListIterator<E> listIterator()`  `ListIterator<E> listIterator(int index)`| 返回一个列表迭代器 迭代器第一次调用next返回给定位置元素  | 
+|  `void add(int i, E element)` `void addAll(int i, Colletion<? extend E> elements)` | 向集合指定位置添加元素 | 
+E remove(int i)	删除给定位置元素并返回
+E get(int i)	获得给定位置元素并返回
+E set(int i, E element)
+设置给定位置元素并返回原来的元素
+int indexOf(Object element)
+int lastIndexOf(Object element)	返回与指定元素相等元素在列表中第一次出现的位置
+返回与指定元素相等元素在列表中最后一次出现的位置
+
+
+
+# LeetCode 300
 ## Tree 
 | Tree | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
