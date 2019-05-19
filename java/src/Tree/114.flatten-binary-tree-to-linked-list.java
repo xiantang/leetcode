@@ -50,22 +50,36 @@
  * }
  */
 class Solution {
-    public void flatten(TreeNode root) {
-         if (root == null) return;
+    // public void flatten(TreeNode root) {
+        //  if (root == null) return;
         
-        TreeNode left = root.left;
-        TreeNode right = root.right;
+        // TreeNode left = root.left;
+        // TreeNode right = root.right;
         
-        root.left = null;
+        // root.left = null;
         
-        flatten(left);
-        flatten(right);
+        // flatten(left);
+        // flatten(right);
         
        
-        root.right = left;
-        TreeNode cur = root;
-        while (cur.right != null) cur = cur.right;
-        cur.right = right;
+        // root.right = left;
+        // TreeNode cur = root;
+        // while (cur.right != null) cur = cur.right;
+        // cur.right = right;
+    // }
+    private TreeNode prev =null;
+    public void flatten(TreeNode root) {
+        if(root == null){
+            return;
+        }
+        TreeNode left = root.left;
+        TreeNode right = root.right;
+        flatten(right);
+        flatten(left);
+        root.right = prev;
+        root.left = null;
+        prev =root;
+
     }
 }
 
