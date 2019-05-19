@@ -38,6 +38,8 @@
  * }
  */
 class Solution {
+
+    //***************************
     Map<Integer, Integer> rightmostValueAtDepth = new HashMap<Integer, Integer>();
     int max_depth = -1;
     public List<Integer> rightSideView(TreeNode root) {
@@ -65,6 +67,38 @@ class Solution {
             rightView.add(rightmostValueAtDepth.get(i));
         }
         return rightView;
+    }
+    //**************************************** */
+
+
+    
+    // use queue
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        if (root == null) return res;
+        queue.offer(root);
+        while(queue.size()!=0){
+            List<Integer> list = new ArrayList<>();
+             
+           int size= queue.size();
+            for(int i=0;i<size;i++){
+                TreeNode node = queue.poll();
+                if(node.left!=null){
+                    queue.offer(node.left);
+                }
+                if(node.right!=null){
+                    queue.offer(node.right);
+                }
+                list.add(node.val);
+            }
+           
+            if(list.size()>0){
+                res.add(list.get(list.size()-1));
+            }
+           
+        }
+        return res;
     }
 }
 
