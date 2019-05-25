@@ -42,13 +42,13 @@ int lastIndexOF(String str[, int fromIndex]) | 	返回第一个/最后一个子�
 |---| ----- |
 | `ListIterator<E> listIterator()`  `ListIterator<E> listIterator(int index)`| 返回一个列表迭代器 迭代器第一次调用next返回给定位置元素  | 
 |  `void add(int i, E element)` `void addAll(int i, Colletion<? extend E> elements)` | 向集合指定位置添加元素 | 
-E remove(int i)	删除给定位置元素并返回
-E get(int i)	获得给定位置元素并返回
-E set(int i, E element)
-设置给定位置元素并返回原来的元素
-int indexOf(Object element)
-int lastIndexOf(Object element)	返回与指定元素相等元素在列表中第一次出现的位置
-返回与指定元素相等元素在列表中最后一次出现的位置
+ |E remove(int i)	 | 删除给定位置元素并返回 |
+ |E get(int i)	 | 获得给定位置元素并返回  |
+ | E set(int i, E element)  |设置给定位置元素并返回原来的元素 |
+ | `int indexOf(Object element)` `int lastIndexOf(Object element)`	 |返回与指定元素相等元素在列表中第一次出现的位置 返回与指定元素相等元素在列表中最后一次出现的位置|
+
+
+
 
 
 
