@@ -17,12 +17,14 @@ class Solution {
     n 表示我要取多少个元素
     s 表示起始的index
     **/
-    public void dfs(int[] nums,List<Integer> cur,List<List<Integer>> res,int n,int s){
+    public void dfs(int[] nums,List<Integer> cur,List<List<Integer>> res,
+    int n,int s){
         if(cur.size() == n){
             res.add(new ArrayList<>(cur));
             return;
         }
         for(int i = s;i<nums.length;++i){
+            // i 表示的是开始的位置
             cur.add(nums[i]);
             dfs(nums,cur,res,n,i+1);
             cur.remove(cur.size()-1);
